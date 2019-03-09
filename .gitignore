@@ -238,5 +238,5 @@ pip-log.txt
 *.nupkg
 *.pem
 **/.vs/*
-/SmartAmazonSmile/7za.exe
-/SmartAmazonSmile/Firefox/*
+*/7za.exe
+*/Firefox/*

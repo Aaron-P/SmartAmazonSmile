@@ -1,4 +1,4 @@
-(function() {
+(async function () {
     "use strict";
 
     //#region Code from https://github.com/NiklasGollenstede/web-ext-utils/blob/master/utils/index.js#L19
