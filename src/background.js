@@ -47,11 +47,11 @@
     browser.webRequest.onBeforeRequest.addListener(
         async (details) => {
             //Get rule set for matched domain.
-            let url = new URL(details.url);
-            let rule = rules.find(obj => obj.pattern.test(url.href));
+            const url = new URL(details.url);
+            const rule = rules.find(obj => obj.pattern.test(url.href));
 
             //Get executing tab so we know what cookie store it uses.
-            let tab = await browser.tabs.get(details.tabId);
+            const tab = await browser.tabs.get(details.tabId);
 
             //Make sure we aren't already on the hostame we want to redirect to.
             if (!tab || !rule || rule.redirectDomain === url.hostname)
@@ -59,13 +59,13 @@
 
             //Get the url with the new hostname.
             url.hostname = rule.redirectDomain;
-            let redirect = url.href;
+            const redirect = url.href;
 
             //Get all cookies for our matched domain.
-            let cookies = await browser.cookies.getAll({ domain: rule.domain, storeId: tab.cookieStoreId });
+            const cookies = await browser.cookies.getAll({ domain: rule.domain, storeId: tab.cookieStoreId });
 
             //Check if all of the cookies we expect to exist when logged in do exist.
-            let loggedIn = cookies.filter(cookie => rule.cookies.includes(cookie.name)).length === rule.cookies.length;
+            const loggedIn = cookies.filter(cookie => rule.cookies.includes(cookie.name)).length === rule.cookies.length;
             if (loggedIn)
                 return { redirectUrl: redirect };
         },

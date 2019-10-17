@@ -1,0 +1,5 @@
+src\*
+LICENSE-3RD-PARTY.md
+LICENSE.md
+manifest.json
+README.md

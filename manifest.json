@@ -1,0 +1,34 @@
+{
+    "manifest_version": 2,
+    "name": "Smart Amazon Smile",
+    "version": "1.1.1",
+    "description": "Redirect Amazon.com, Amazon.co.uk, and Amazon.de to Amazon Smile when logged in.",
+    "author": "Aaron Papp",
+    "homepage_url": "https://github.com/Aaron-P/SmartAmazonSmile",
+    "icons": {
+        "24": "src/icons/icon.svg",
+        "32": "src/icons/icon.svg",
+        "48": "src/icons/icon.svg",
+        "64": "src/icons/icon.svg",
+        "96": "src/icons/icon.svg"
+    },
+    "permissions": [
+        "*://www.amazon.co.uk/*",
+        "*://www.amazon.com/*",
+        "*://www.amazon.de/*",
+        "cookies",
+        "webRequest",
+        "webRequestBlocking"
+    ],
+    "background": {
+        "scripts": [
+            "src/background.js"
+        ]
+    },
+    "browser_specific_settings": {
+        "gecko": {
+            "id": "{9e0e0b12-7910-49da-b44b-1a2f9110d61e}",
+            "strict_min_version": "57.0"
+        }
+    }
+}
